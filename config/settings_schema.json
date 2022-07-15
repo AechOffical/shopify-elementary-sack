@@ -37,6 +37,37 @@
         "id": "color_accent_1",
         "default": "#176FC4",
         "label": "Accent"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_variant",
+        "default": "#004E99",
+        "label": "Accent Variant"
+      },
+      {
+        "type": "color",
+        "id": "color_background_dark",
+        "default": "#000000",
+        "label": "Background Dark"
+      },
+
+      {
+        "type": "color",
+        "id": "color_background_light",
+        "default": "#F5F5F1",
+        "label": "Background Light"
+      },
+      {
+        "type": "color",
+        "id": "color_background_light_2",
+        "default": "#FCFCFA",
+        "label": "Background Light 2"
+      },
+      {
+        "type": "color",
+        "id": "color_text_dark",
+        "default": "#311C1C",
+        "label": "Text Dark"
       }
     ]
   },

@@ -27,13 +27,6 @@
       },
       {
         "type": "color",
-        "id": "colors_accent",
-        "default": "#121212",
-        "label": "t:settings_schema.colors.settings.colors_accent_1.label",
-        "info": "t:settings_schema.colors.settings.colors_accent_1.info"
-      },
-      {
-        "type": "color",
         "id": "color_accent_1",
         "default": "#176FC4",
         "label": "Accent"
@@ -68,6 +61,72 @@
         "id": "color_text_dark",
         "default": "#311C1C",
         "label": "Text Dark"
+      },
+      {
+        "type": "color",
+        "id": "color_text_light",
+        "default": "#FFFFFF",
+        "label": "Text Dark"
+      },
+      {
+        "type": "color",
+        "id": "neutral_30",
+        "default": "#4D4D4D",
+        "label": "Neutral-30"
+      },
+      {
+        "type": "color",
+        "id": "neutral_45",
+        "default": "#737373",
+        "label": "Neutral 45"
+      },
+      {
+        "type": "color",
+        "id": "neutral_70",
+        "default": "#B3B3B3",
+        "label": "Neutral 70"
+      },
+      {
+        "type": "color",
+        "id": "neutral_88",
+        "default": "#E1E1E1",
+        "label": "Neutral 88"
+      },
+      {
+        "type": "color",
+        "id": "neutral_94",
+        "default": "#F0F0F0",
+        "label": "Neutral 94"
+      },
+      {
+        "type": "color",
+        "id": "neutral_94",
+        "default": "#F7F7F7",
+        "label": "Neutral 94"
+      },
+      {
+        "type": "color",
+        "id": "semantic_error",
+        "default": "#B00020",
+        "label": "Semantic error"
+      },
+      {
+        "type": "color",
+        "id": "semantic_warning",
+        "default": "#FAA614",
+        "label": "Semantic warning"
+      },
+      {
+        "type": "color",
+        "id": "semantic_success",
+        "default": "#008738",
+        "label": "Semantic success"
+      },
+      {
+        "type": "color",
+        "id": "semantic_information",
+        "default": "#006BB2",
+        "label": "Semantic success"
       }
     ]
   },

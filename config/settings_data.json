@@ -186,6 +186,11 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "header2": {
+        "type": "header2",
+        "settings": {
+        }
       }
     },
     "content_for_index": [

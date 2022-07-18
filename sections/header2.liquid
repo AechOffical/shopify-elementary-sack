@@ -1,39 +1,50 @@
 {{ 'section-header2.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
 
 
-<div class="headerWrapper">
+<div class="headerWrapper shopify-section-header-sticky">
     <header>
         <nav>
             {% comment %}<div v-show="mobile" id="menuTrigger">{% endcomment %}
                 {% comment %}<img ref="menuTrigger" @click="menu" src="@/assets/menu.svg" alt="menu trigger">{% endcomment %}
             {% comment %}</div>{% endcomment %}
             <div class="primary-links" >
-                <div>
-                    {% for link in section.settings.menu.links %}
 
-                    <a class="h5 expand-nav-element" href="{{ link.url }}">
-                        {{ link.title }}
-                        {% if link.links.size > 0 %}
-                            <img src="/assets/chev-expand.svg" loading="lazy" alt="chev">
-                            {% for child_link in link.links %}
+                        {% for link in linklists.main-menu.links %}
+                            <div>
+                                <span class="element">
+                                    {% if link.links > 0 %}
+                                        yikes
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                         <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="#311C1C"/>
+                                        </svg>
+                                            <div class="expand">
+                                             <ul class="expanded">
+                                                 {% for child_link in link.links %}
+                                                    <li>
+                                                        <a href="{{ child_link.url }}">{{ child_link.title | escape }}</a>
+                                                    </li>
+                                                 {% endfor %}
+                                             </ul>
+                                        </div>
+                                    {% else %}
+                                        <a href="{{ link.url }}">
+                                            {{ link.title }}
+                                        </a>
+                                    {% endif %}
 
-                            {% endfor %}
+                                </span>
 
-                        {% endif %}
-                    </a>
-                    {% endfor %}
-                </div>
+                            </div>
+                {% endfor %}
 
-                {% comment %}<a href="#" class="h5 expand-nav-element">{% endcomment %}
-                    {% comment %}Learn{% endcomment %}
-                    {% comment %}<img src="/assets/chev-expand.svg" loading="lazy" alt="chev">{% endcomment %}
-                {% comment %}</a>{% endcomment %}
-                {% comment %}<a href="#" class="h5 ex">Find Us{% endcomment %}
-                {% comment %}</a>{% endcomment %}
+
+
+
             </div>
             <div class="logo">
-                <a >
-                    <img src="/assets/ES-Logo-TM.png" loading="lazy" alt="logo">
+                <a href="{{ routes.root_url }}">
+                    <img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/ES-Logo-TM.png?v=1658132910" loading="lazy" alt="logo">
                 </a>
             </div>
             {% comment %}<div class="secondary-links">{% endcomment %}

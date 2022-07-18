@@ -19,10 +19,9 @@ header:after {
     height: 100px;
     position: absolute;
     background-size: cover;
-    background: url("BG-brown.png") center;
     left: 0;
     top: 0;
-
+    background: url("BG-brown.png") center;
     z-index: 0;
 }
 

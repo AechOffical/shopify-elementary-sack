@@ -1,19 +1,56 @@
 <style>
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 410px;
+    text-align: center;
+  }
+  article:hover {
+    --bg: #F0F0F0;
+  }
+  .h3 {
+    /*color: $textDark;*/
+    margin: 5px;
+
+  }
+
+  .img {
+    background-color: var(--bg);
+  }
+  a {
+    color: inherit;
+  }
+
+
+  .body1 {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    /*color: $neutral45;*/
+  }
+
+  img {
+    padding: 31px;
+    max-width: 346px;
+    max-height: 450px;
+  }
+
 
 </style>
 
 
 {% if card_product and card_product != empty %}
-
+<a href="{{ card_product.url }}">
   <article class="article" >
-    <div class="img" ref="img">
+    <div class="img" style="background-color: {{ card_product.metafields.custom.backgroundcolor.value }}">
       <img src="{{ card_product.featured_media |   image_url: width: 346 }}" alt="product photo">
     </div>
     <p class="h3">{{card_product.title}}</p>
     <p class="body1">
-      {% render 'price', product: card_product, price_class: '' %}| {{perWhat}}
+      <span>{% render 'price', product: card_product, price_class: '' %}</span> <span> | 6-Pack (6 cakes per pack)</span>
     </p>
 
   </article>
-
+</a>
 {% endif %}

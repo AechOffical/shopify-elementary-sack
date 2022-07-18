@@ -85,7 +85,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
-    "currency_code_enabled": true,
+    "currency_code_enabled": false,
     "colors_accent_1": "#e22120",
     "gradient_accent_1": "",
     "colors_accent_2": "#334fb4",

@@ -1,0 +1,51 @@
+{{ 'section-header2.css' | asset_url | stylesheet_tag }}
+
+
+<div class="headerWrapper">
+    <header>
+        <nav>
+            {% comment %}<div v-show="mobile" id="menuTrigger">{% endcomment %}
+                {% comment %}<img ref="menuTrigger" @click="menu" src="@/assets/menu.svg" alt="menu trigger">{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+            <div class="primary-links" >
+                <div>
+                    {% for link in section.settings.menu.links %}
+
+                    <a class="h5 expand-nav-element" href="{{ link.url }}">
+                        {{ link.title }}
+                        {% if link.links.size > 0 %}
+                            <img src="/assets/chev-expand.svg" loading="lazy" alt="chev">
+                            {% for child_link in link.links %}
+
+                            {% endfor %}
+
+                        {% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+
+                {% comment %}<a href="#" class="h5 expand-nav-element">{% endcomment %}
+                    {% comment %}Learn{% endcomment %}
+                    {% comment %}<img src="/assets/chev-expand.svg" loading="lazy" alt="chev">{% endcomment %}
+                {% comment %}</a>{% endcomment %}
+                {% comment %}<a href="#" class="h5 ex">Find Us{% endcomment %}
+                {% comment %}</a>{% endcomment %}
+            </div>
+            <div class="logo">
+                <a >
+                    <img src="/assets/ES-Logo-TM.png" loading="lazy" alt="logo">
+                </a>
+            </div>
+            {% comment %}<div class="secondary-links">{% endcomment %}
+                {% comment %}<a href="#"  class="h5">Account</a>{% endcomment %}
+                {% comment %}<img src="/assets/cart-1.svg" loading="lazy" style="cursor: pointer" alt="cart">{% endcomment %}
+                {% comment %}<a href="#"  class="expand-nav-element">{% endcomment %}
+                    {% comment %}<img src="/assets/usa.svg" loading="lazy" alt="dropdown">{% endcomment %}
+                    {% comment %}<img id="chev-usa" src="/assets/chev-expand.svg" loading="lazy" alt="chev">{% endcomment %}
+                {% comment %}</a>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+        </nav>
+    </header>
+</div>
+
+

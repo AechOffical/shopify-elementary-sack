@@ -1,0 +1,183 @@
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*position: fixed;*/
+    z-index: 50;
+}
+.headerWrapper {
+    position: sticky;
+    z-index: 20;
+    top: 0;
+}
+
+header:after {
+    content: "";
+
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    background-size: cover;
+    background: url("BG-brown.png") center;
+    left: 0;
+    top: 0;
+
+    z-index: 0;
+}
+
+
+nav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: grid;
+
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 16px;
+}
+
+
+.primary-links {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 30px;
+}
+
+#menuTrigger {
+    grid-row-start: 2;
+    grid-column-start: 1;
+
+}
+
+.mobile-menu {
+    position: absolute;
+    margin-top: 10%;
+    height: 100%;
+    z-index: 3;
+}
+
+
+.expand-nav-element {
+    display: flex;
+    gap: 0;
+
+}
+
+#chev-usa {
+    /*transform: scale(0.5);*/
+}
+
+
+a {
+    text-decoration: none;
+
+}
+a:link {
+    text-decoration: none;
+}
+
+
+
+
+@media screen and (min-width: 1680px) {
+    nav {
+        grid-template-columns: repeat(12, 80px);
+        grid-auto-rows: 16px;
+    }
+
+    .secondary-links {
+        grid-row-start: 2;
+        grid-column-end: 13;
+        display: flex;
+        justify-content: right;
+        gap: 30px;
+    }
+
+    .logo {
+        grid-row-start: 2;
+        grid-column-start: 6;
+        grid-column-end: 8;
+        justify-self: center;
+    }
+}
+
+
+@media screen and (max-width: 1679px) and (min-width: 1200px) {
+    nav {
+        grid-template-columns: repeat(12, 65px);
+        grid-auto-rows: 16px;
+    }
+
+    .secondary-links {
+        grid-row-start: 2;
+        grid-column-end: 13;
+        display: flex;
+        justify-content: right;
+        gap: 30px;
+    }
+
+    .logo {
+        grid-row-start: 2;
+        grid-column-start: 6;
+        grid-column-end: 8;
+        justify-self: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+    nav {
+        grid-template-columns: repeat(6, 90px);
+        grid-auto-rows: 16px;
+    }
+
+    .secondary-links {
+        grid-row-start: 2;
+        grid-column-end: 7;
+        display: flex;
+        justify-content: right;
+        gap: 30px;
+    }
+
+    .logo {
+        grid-row-start: 2;
+        grid-column-start: 3;
+        grid-column-end: 5;
+        justify-self: center;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    nav {
+        grid-template-columns: repeat(2, 130px);
+        grid-column-gap: 20px;
+        grid-auto-rows: 16px;
+    }
+
+    .secondary-links {
+        grid-row-start: 2;
+        grid-column-end: 3;
+        display: flex;
+        justify-content: right;
+        gap: 30px;
+    }
+
+    .logo {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        justify-self: center;
+    }
+
+}

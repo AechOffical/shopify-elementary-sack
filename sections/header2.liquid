@@ -1,6 +1,18 @@
 {{ 'section-header2.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
 
+<style>
+.expand {
+    display: none;
+}
+.nav-element {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+</style>
 
 <div class="headerWrapper shopify-section-header-sticky">
     <header>
@@ -13,11 +25,13 @@
                         {% for link in linklists.main-menu.links %}
                             <div>
                                 <span class="element">
-                                    {% if link.links > 0 %}
-                                        yikes
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                         <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="#311C1C"/>
-                                        </svg>
+
+                                    {% if link.levels != 0 %}
+                                        <span class="nav-element">
+                                            {{ link.title | escape }}
+                                            {% render 'icon-chev-expand' %}
+                                        </span>
+
                                             <div class="expand">
                                              <ul class="expanded">
                                                  {% for child_link in link.links %}
@@ -28,7 +42,7 @@
                                              </ul>
                                         </div>
                                     {% else %}
-                                        <a href="{{ link.url }}">
+                                        <a class="nav-element" href="{{ link.url }}">
                                             {{ link.title }}
                                         </a>
                                     {% endif %}
@@ -47,14 +61,19 @@
                     <img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/ES-Logo-TM.png?v=1658132910" loading="lazy" alt="logo">
                 </a>
             </div>
-            {% comment %}<div class="secondary-links">{% endcomment %}
-                {% comment %}<a href="#"  class="h5">Account</a>{% endcomment %}
-                {% comment %}<img src="/assets/cart-1.svg" loading="lazy" style="cursor: pointer" alt="cart">{% endcomment %}
-                {% comment %}<a href="#"  class="expand-nav-element">{% endcomment %}
-                    {% comment %}<img src="/assets/usa.svg" loading="lazy" alt="dropdown">{% endcomment %}
-                    {% comment %}<img id="chev-usa" src="/assets/chev-expand.svg" loading="lazy" alt="chev">{% endcomment %}
-                {% comment %}</a>{% endcomment %}
-            {% comment %}</div>{% endcomment %}
+            <div class="secondary-links">
+                <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+                    {%- liquid
+                        if cart == empty
+                            render 'icon-cart'
+                        else
+                            render 'icon-cart'
+                        endif
+                    -%}
+                    <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+                </a>
+
+            </div>
         </nav>
     </header>
 </div>

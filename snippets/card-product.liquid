@@ -31,7 +31,7 @@
   }
 
   img {
-    padding: 31px;
+    padding: 0;
     max-width: 346px;
     max-height: 450px;
   }
@@ -44,7 +44,7 @@
 <a href="{{ card_product.url }}">
   <article class="article" >
     <div class="img" style="background-color: {{ card_product.metafields.custom.backgroundcolor.value }}">
-      <img src="{{ card_product.featured_media |   image_url: width: 346 }}" alt="product photo">
+      <img src="{{ card_product.featured_media |   img_url: "master" }}" alt="product photo">
     </div>
     <p class="h3">{{card_product.title}}</p>
     <p class="body1">

@@ -1,15 +1,11 @@
 <style>
 
-
     .blue {
         display: flex;
         justify-content: center;
         align-items: center;
         color: #FFFFFF;
-        z-index: 2;
-
     }
-
     .hyphen {
         background-color: #FFFFFF !important;
         width: 60px;
@@ -19,22 +15,21 @@
         display: flex;
         align-items: center;
         gap: 8px;
-
     }
-
     .blue-wrapper {
         padding-top: 130px;
         position: relative;
-        max-height: 800px;
+        max-height: 1200px;
         padding-left: 0;
         padding-right: 0;
         margin: 0;
+        z-index: 4;
     }
 
     .blue-wrapper:after {
         content: "";
         position: absolute;
-        z-index: 0;
+        z-index: -1;
         top: 0;
         left: 0;
 
@@ -42,33 +37,27 @@
         height: 100%;
         background: url("https://cdn.shopify.com/s/files/1/0616/6151/1833/files/BG-blue.png?v=1658212473") top no-repeat;
         background-size: cover;
-        max-height: 680px;
+        max-height: 1200px;
     }
 
-
-
     img {
-        max-width: 700px !important;
-        z-index: 3;
+        max-width: fit-content !important;
     }
 
     .content {
-        max-width: 500px;
+        max-width: 800px;
         display: flex;
         flex-direction: column;
         padding: 5px;
-        z-index: 1;
     }
 
     @media screen and (max-width: 1199px) {
         .blue {
             flex-direction: column;
         }
-
         img {
             max-width: 400px;
         }
-
     }
     @media screen and (max-width: 720px) {
         .blue {

@@ -3,10 +3,20 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .product-grid-container {
+    background-color: #F5F5F1;
+  }
+  .blue-header-wrappper {
+    z-index: 3;
+    height: 500px;
+  }
+</style>
+
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <div class="product-grid-container" id="ProductGridContainer">
-      {% render 'blue-header.liquid', collection: collection %}
+        {% render 'blue-header.liquid', collection: collection %}
 
 
 

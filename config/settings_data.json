@@ -87,6 +87,7 @@
     "predictive_search_show_price": false,
     "currency_code_enabled": false,
     "cart_type": "drawer",
+    "cart_drawer_collection": "all-products",
     "colors_accent_1": "#e22120",
     "gradient_accent_1": "",
     "colors_accent_2": "#334fb4",

@@ -80,6 +80,14 @@
   --alpha-button-background: 1;
 }
 
+.head {
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
 .color-background-2 .button--secondary,
 .color-accent-1 .button--secondary,
 .color-accent-2 .button--secondary {

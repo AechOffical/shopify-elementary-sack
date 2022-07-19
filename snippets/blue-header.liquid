@@ -1,0 +1,107 @@
+<style>
+
+
+    .blue {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+    }
+
+    .hyphen {
+        background-color: #FFFFFF !important;
+        width: 60px;
+        height: 1px;
+    }
+    .script {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+    }
+
+    .blue-wrapper {
+        padding-top: 130px;
+        position: relative;
+        max-height: 560px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+
+    .blue-wrapper:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        background: url("https://cdn.shopify.com/s/files/1/0616/6151/1833/files/BG-blue.png?v=1658212473") top no-repeat;
+        background-size: cover;
+        max-height: 680px;
+    }
+
+
+
+    img {
+        max-width: 700px;
+    }
+
+    .content {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+
+    }
+
+    @media screen and (max-width: 1199px) {
+        .blue {
+            flex-direction: column;
+        }
+
+        img {
+            max-width: 400px;
+        }
+
+    .blue-wrapper {
+
+    }
+    }
+    @media screen and (max-width: 720px) {
+        .blue {
+            flex-direction: column;
+        }
+
+        img {
+            max-width: 300px;
+
+    }
+    .blue-wrapper {
+
+    }
+    }
+
+</style>
+{% if collection and collection != empty %}
+
+    <section class="blue-wrapper">
+        <section class="blue">
+            <div class="content">
+                <div class="script">
+                    <div class="hyphen ">
+                    </div>
+                    Shop
+                </div>
+                <span class="h1">{{ collection.title }}</span>
+                <p class="body1">{{ collection.description }}</p>
+            </div>
+            <div class="img">
+                <img src="{{ collection.image }}" alt="collectiom image">
+            </div>
+        </section>
+    </section>
+
+{% endif %}

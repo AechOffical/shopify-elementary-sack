@@ -1,3 +1,8 @@
+{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+
 <style>
     .productView {
         display: grid;
@@ -26,7 +31,83 @@
         line-height: 24px;
         letter-spacing: 0;
         color: #311C1C !important;
+
     }
+    .buttons {
+        display: flex;
+        gap: 20px;
+    }
+    .cartAdd {
+        width: 100%;
+
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        border-radius: 50px;
+        padding: 13px 15px;
+        transition: background-color 0.5s;
+        cursor: pointer;
+
+
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0;
+
+
+
+        border: 2px solid #176FC4;
+
+        background-color: #176FC4;
+        color: #FFFFFF;
+
+    }
+
+    .cartAdd:hover {
+        border-color: #004E99FF;
+        background-color: #004E99FF;
+    }
+
+    .tertiaries {
+        display: flex;
+        gap: 20px;
+    }
+
+    .tertiary {
+        position: relative;
+        border-radius: 0;
+        background: none;
+        border: none;
+        color: #176FC4 !important;
+        padding: 0;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+
+    .tertiary:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        background-color: #176FC4;
+        transition: width 1s;
+    }
+
+    .tertiary:hover:after {
+        width: 100%;
+    }
+
+    .tertiary:hover {
+        color: #004E99;
+        border-color: #004E99;
+    }
+
+
     .productViewWrap {
         background-color: #F5F5F1;
         padding-top: 3%;
@@ -92,8 +173,6 @@
             grid-column-start: 1;
             grid-column-end: 3;
         }
-
-
     }
 
 
@@ -125,7 +204,6 @@
         }
     }
 </style>
-{% form 'product', product %}
 
 <div class="productViewWrap">
     <section class="productView">
@@ -138,8 +216,12 @@
             <div class="h3">
                 {% render 'price', price: product.price %}
             </div>
-            <div>
-                <quantity-input class="quantity">
+    {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+            <div class="buttons">
+
+
+        <input type="hidden" value="{{ product.selected_or_first_available_variant.id }}" name="id">
+            <quantity-input class="quantity">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
                         <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                         {% render 'icon-minus' %}
@@ -160,12 +242,13 @@
                 <button
                         type="submit"
                         name="add"
-                        class=""
+                        class="cartAdd"
                         {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                 >
                             <span>
                               {%- if product.selected_or_first_available_variant.available -%}
-                                  {{ 'products.product.add_to_cart' | t }}
+                                  {% comment %}{{ 'products.product.add_to_cart' | t }}{% endcomment %}
+                                  ADD TO CART
                               {%- else -%}
                                   {{ 'products.product.sold_out' | t }}
                               {%- endif -%}
@@ -176,11 +259,38 @@
                         </svg>
                     </div>
                 </button>
+            </div>
 
-        </div>
+    {%- endform -%}
+
+            {% if product.metafields.custom.additionallinks %}
+                <div class="tertiaries">
+                    {% for link in product.metafields.custom.additionallinks.value.links %}
+                        <a class="tertiary" target="_blank" href="{{ link.link }}">{{ link.name }}</a>
+
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                <details id="Details-{{ block.id }}-{{ section.id }}">
+                    <summary>
+                        <div class="summary__title">
+                            {% render 'icon-accordion', icon: block.settings.icon %}
+                            <h2 class="h4 accordion__title">
+                                Details
+                            </h2>
+                        </div>
+                        {% render 'icon-caret' %}
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                        {{ product.content }}
+                    </div>
+                </details>
+            </div>
+
         </div>
 
 
     </section>
 </div>
-{% endform %}

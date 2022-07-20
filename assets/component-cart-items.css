@@ -4,6 +4,11 @@
   border: none;
 }
 
+.cart-items {
+  background-color: #F5F5F1;
+
+}
+
 .cart-items th {
   text-align: left;
   padding-bottom: 1.8rem;

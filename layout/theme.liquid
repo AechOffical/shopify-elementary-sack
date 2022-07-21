@@ -58,7 +58,7 @@
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
 
-        --color-accent-1: {{ settings.color_accent_1.red }}, {{ settings.color_accent_1.green }}, {{ settings.color_accent_1.blue }};
+        --color-accent-1: {{ settings.color_accent_1 }}
         --color-accent-variant: {{ settings.color_accent_variant.red }}, {{ settings.color_accent_variant.green }}, {{ settings.color_accent_variant.blue }};
         --color-background-dark: {{ settings.color_background_dark.red }}, {{ settings.color_background_dark.green }}, {{ settings.color_background_dark.blue }};
         --color-background-light: {{ settings.color_background_light.red }}, {{ settings.color_background_light.green }}, {{ settings.color_background_light.blue }};

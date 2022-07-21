@@ -89,16 +89,11 @@
     "cart_type": "page",
     "show_cart_note": true,
     "cart_drawer_collection": "all-products",
-    "colors_accent_1": "#e22120",
-    "gradient_accent_1": "",
-    "colors_accent_2": "#334fb4",
-    "gradient_accent_2": "",
-    "colors_text": "#121212",
-    "colors_outline_button_labels": "#121212",
-    "colors_background_1": "#ffffff",
-    "gradient_background_1": "",
-    "colors_background_2": "#f3f3f3",
-    "gradient_background_2": "",
+
+
+    "color_accent_1": "#176FC4",
+    "color_accent_variant": "#004E99",
+
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",

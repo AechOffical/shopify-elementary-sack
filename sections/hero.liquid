@@ -1,4 +1,376 @@
-    <section class="main">
+<style>
+    .main {
+        background: radial-gradient(69.66% 34.03% at 64.85% 79.5%,rgba(25,120,212,.8) 0%,rgba(255,255,255,0) 100%),linear-gradient(180deg,#1977d2 -9.55%,#1978d4 113.32%);
+        overflow:hidden ;
+    }
+
+    .hyphen {
+        background-color: rgba(var(--color-text-light));
+        width: 60px;
+        height: 1px;
+    }
+    .over {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 10;
+        align-items: center;
+        display: flex;
+        gap: 8px;
+    }
+
+    .primary-hero-button {
+        grid-row-start: 19;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .text-overline {
+
+        text-align: left;
+
+    }
+
+    .main {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        column-gap: 30px;
+        row-gap: 16px;
+    }
+
+
+    .announcement {
+        grid-column-start: 1;
+        grid-column-end: 11;
+        grid-row-start: 7;
+        color: rgba(var(--color-text-light));
+        z-index: 2;
+    a {
+        display: flex;
+        color: rgba(var(--color-text-light));
+        text-decoration: none;
+    }
+    }
+
+    .maskGroup {
+        position: absolute;
+        right: 5rem;
+
+        height: 50%;
+        bottom: 0;
+    }
+    #choc1 {
+        position: absolute;
+        left: 50rem;
+        bottom: 50%;
+    }
+    #choc2 {
+        position: absolute;
+        right: 100%;
+        bottom: 40%;
+    }
+    #choc3 {
+        position: absolute;
+        left: 47rem;
+        bottom: 120%;
+    }
+    #chocSplash {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+        bottom: 5em;
+        z-index: 1;
+    }
+    #product-hero {
+        position: absolute;
+        bottom: -1rem;
+        right: 0;
+        left: 20rem;
+    }
+    .elevate {
+        z-index: 5;
+    }
+
+
+    @media screen and (min-width: 1680px) {
+        .main {
+            color: rgba(var(--color-text-light));
+
+            grid-template-columns: repeat(12, 80px);
+            grid-auto-rows: 16px;
+
+        }
+
+        .tagline {
+            grid-column-start: 1;
+            grid-column-end: 10;
+
+
+            grid-row-start: 11;
+            grid-row-end: 19;
+            align-self: center;
+
+            font-size: 110px;
+            font-weight: 700;
+            line-height: 112px;
+            letter-spacing: -3px;
+            text-align: left;
+        }
+
+        .bottom:after {
+            content: "";
+            position: absolute;
+
+            background-position-x: -15% ;
+            background: url("https://cdn.shopify.com/s/files/1/0616/6151/1833/files/Vector.png?v=1658398222") no-repeat;
+            background-size: cover;
+
+            bottom: 0;
+            left: 0;
+            height: 70%;
+            width: 100%;
+            box-sizing: inherit;
+        }
+        .maskGroup {
+            width: 50%;
+        }
+
+        .bottom {
+            box-sizing: content-box;
+            display: grid;
+            grid-template-columns: repeat(12, 80px);
+            grid-auto-rows: 16px;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+            row-gap: 16px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 25%;
+            z-index: 2;
+
+    }
+        svg {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    }
+    @media screen and (max-width: 1679px) and (min-width: 1200px) {
+        .main {
+            color: rgba(var(--color-text-light));
+            grid-template-columns: repeat(12, 65px);
+            grid-auto-rows: 16px;
+
+        }
+        .tagline {
+            grid-column-start: 1;
+            grid-column-end: 10;
+
+
+            grid-row-start: 11;
+            grid-row-end: 19;
+            align-self: center;
+
+            font-size: 110px;
+            font-weight: 700;
+            line-height: 112px;
+            letter-spacing: -3px;
+            text-align: left;
+        }
+        .bottom {
+            box-sizing: content-box;
+            display: grid;
+            grid-template-columns: repeat(12, 65px);
+            grid-auto-rows: 16px;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+            row-gap: 16px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 25%;
+            z-index: 2;
+
+    }
+        svg {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+    .bottom:after {
+        content: "";
+        position: absolute;
+
+        background-position-x: -15% ;
+        background: url("https://cdn.shopify.com/s/files/1/0616/6151/1833/files/Vector.png?v=1658398222") no-repeat;
+        background-size: cover;
+
+        bottom: 0;
+        left: 0;
+        height: 70%;
+        width: 100%;
+        box-sizing: inherit;
+    }
+    .maskGroup {
+        width: 50%;
+        transform: scale(0.85);
+        right: 10rem;
+    }
+    }
+
+
+    @media screen and (max-width: 1199px) and (min-width: 321px) {
+
+        .main {
+            overflow-x: hidden;
+            color: rgba(var(--color-text-light));
+            grid-template-columns: repeat(6, 90px);
+            grid-auto-rows: 16px;
+        }
+
+        .tagline {
+            grid-column-start: 1;
+            grid-column-end: 7;
+
+
+            grid-row-start: 7;
+            grid-row-end: 12;
+            align-self: center;
+
+            font-size: 110px;
+            font-weight: 700;
+            line-height: 112px;
+            letter-spacing: -3px;
+            text-align: left;
+        }
+        .over {
+            grid-row-start: 5;
+        }
+        .maskGroup {
+            transform: scale(0.68);
+            margin: auto;
+
+            left: 10%;
+            bottom: -6%;
+        }
+
+        .primary-hero-button {
+            grid-row-start: 14;
+        }
+
+        .bottom:after {
+            content: "";
+            position: absolute;
+
+            background-position-x: -15% ;
+            background: url("https://cdn.shopify.com/s/files/1/0616/6151/1833/files/Vector.png?v=1658398222");
+            background-size: cover;
+
+            bottom: 0;
+            left: 0;
+            height: 70%;
+            width: 100%;
+        }
+
+        .bottom {
+            box-sizing: content-box;
+            display: grid;
+            grid-template-columns: repeat(6, 90px);
+            grid-auto-rows: 16px;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+            row-gap: 16px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 19%;
+            z-index: 2;
+
+        }
+        svg {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        .announcement {
+            grid-row-start: 5;
+            grid-column-start: 1;
+            grid-column-end: 6;
+        }
+
+    }
+
+
+
+    }
+    @media screen and (min-width: 321px) and (max-width: 800px) {
+        .maskGroup {
+            transform: scale(0.68);
+            margin: auto;
+
+
+            left: 3rem !important;
+            bottom: -6%;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .main {
+            overflow-x: hidden;
+            color: rgba(var(--color-text-light));
+            grid-template-columns: repeat(2, 130px);
+            grid-auto-rows: 16px;
+        }
+
+        .bottom:after {
+            content: "";
+            position: absolute;
+
+            background-position-x: -15% ;
+            background: url("https://cdn.shopify.com/s/files/1/0616/6151/1833/files/Vector.png?v=1658398222");
+            background-size: contain;
+
+            bottom: 0;
+            left: 0;
+            height: 70%;
+            width: 100%;
+        }
+
+        .bottom {
+            box-sizing: content-box;
+            display: grid;
+            grid-template-columns: repeat(6, 90px);
+            grid-auto-rows: 16px;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+            row-gap: 16px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 19%;
+            z-index: 2;
+
+        }
+        svg {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+
+    }}
+</style>
+
+
+<section class="main">
         <div class="over elevate">
             <div class="hyphen "></div>
             <div class="text-overline script text">guilt-free snacking</div>
@@ -6,18 +378,21 @@
         <div class="tagline h1-large elevate text">
             Feel Good <br> Indulgence &trade;
         </div>
-        <es-button class="primary-hero-button elevate" :type="buttonType">SHOP NOW</es-button>
+
+        {% comment %}<es-button class="primary-hero-button elevate" :type="buttonType">SHOP NOW</es-button>{% endcomment %}
+
+        <button class="button-primary elevate"><a>SHOP NOW</a></button>
 
         <div class="maskGroup">
-            <div id="choc1" class="choc"><img src="@/assets/choc1.png" alt="choc"></div>
-            <div id="choc2" class="choc"><img src="@/assets/choc2.png" alt="choc"></div>
-            <div id="choc3" class="choc"><img src="@/assets/choc3.png" alt="choc"></div>
-            <div id="product-hero"><img src="@/assets/product-hero.png" alt="choc"></div>
-            <div id="chocSplash"><img src="@/assets/Mask-group.png" alt="chev"></div>
+            <div id="choc1" class="choc"><img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/choc1.png?v=1658398159" alt="choc"></div>
+            <div id="choc2" class="choc"><img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/choc2.png?v=1658398158" alt="choc"></div>
+            <div id="choc3" class="choc"><img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/choc3.png?v=1658398158" alt="choc"></div>
+            <div id="product-hero"><img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/product-hero.png?v=1658398159" alt="choc"></div>
+            <div id="chocSplash"><img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/Mask-Group.png?v=1658398159" alt="chev"></div>
 
         </div>
 
-        <div class="bottom" ref="bottom">
+        <div class="bottom" >
             <div class="announcement body1"><a href="#">
                     <div>An important announcement goes right here in this bar. Lorem ipsum dolor sit amet – Learn More</div>
                 </a> </div>

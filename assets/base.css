@@ -1304,6 +1304,20 @@ button.shopify-payment-button__button--unbranded {
 }
 
 
+.button-primary-dark {
+
+
+  border: 2px solid rgba(var(--color-text-light)) !important;
+  background-color: rgba(var(--color-text-light)) !important;
+  color: var(--color-accent-1) !important;
+}
+
+.button-primary-dark:hover {
+  color: rgba(var(--color-text-light)) !important;
+  border-color: var(--color-accent-1) !important;
+  background-color: var(--color-accent-1) !important;
+}
+
 .button-primary {
   width: 100%;
 

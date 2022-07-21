@@ -162,11 +162,7 @@
             z-index: 2;
 
         }
-        svg {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-        }
+
     }
     @media screen and (max-width: 1679px) and (min-width: 1200px) {
         .main {
@@ -206,11 +202,7 @@
             z-index: 2;
 
     }
-        svg {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-        }
+
 
     .bottom:after {
         content: "";
@@ -303,11 +295,7 @@
             z-index: 2;
 
         }
-        svg {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-        }
+
         .announcement {
             grid-row-start: 5;
             grid-column-start: 1;
@@ -368,12 +356,7 @@
             z-index: 2;
 
         }
-        svg {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-
-    }}
+        }
 </style>
 
 
@@ -386,9 +369,8 @@
             Feel Good <br> Indulgence &trade;
         </div>
 
-        {% comment %}<es-button class="primary-hero-button elevate" :type="buttonType">SHOP NOW</es-button>{% endcomment %}
 
-        <button class="button-primary elevate"><a>SHOP NOW</a></button>
+        <button id="shopButton" class="button-primary button-primary-dark primary-hero-button elevate"><a href="/collections/rice-cakes">SHOP NOW</a></button>
 
         <div class="maskGroup">
             <div id="choc1" class="choc"><img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/choc1.png?v=1658398159" alt="choc"></div>
@@ -410,3 +392,48 @@
         </div>
     </section>
 
+<script>
+
+    function animateChoc() {
+        gsap.to(".choc", {
+            translateY: -200
+        })
+    }
+
+    function animateHero() {
+        gsap.to("#product-hero", {
+            translateY: +100
+        })
+    }
+
+    function animateBackground() {
+        gsap.to(".main", {
+            background: "rgb(245,245,241)"
+        })
+    }
+
+    function animateText() {
+        gsap.to(".text",
+            {
+                color: "#311C1C"
+            })
+        gsap.to(".hyphen", {
+            background: "#311C1C"
+        })
+    }
+
+    let animated = false;
+
+    window.addEventListener("scroll", () => {
+        if(!animated) {
+            animateChoc()
+            animateHero()
+            animateBackground()
+            animateText()
+            animated = true
+            console.log("woooow")
+            document.getElementById("shopButton").classList.remove("button-primary-dark")
+        }
+    })
+
+</script>

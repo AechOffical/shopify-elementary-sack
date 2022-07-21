@@ -2,6 +2,38 @@
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+<style>
+  .checkout {
+    width: 100%;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 13px 15px;
+    transition: background-color 0.5s;
+    cursor: pointer;
+
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0;
+
+
+
+    border: 2px solid #176FC4;
+
+    background-color: #176FC4;
+    color: #FFFFFF;
+  }
+
+  .cartAdd:hover {
+    border-color: #004E99FF;
+    background-color: #004E99FF;
+  }
+
+</style>
 
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
@@ -49,12 +81,12 @@
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
-                  <button type="submit" class="cart__update-button button button--secondary" form="cart">
+                  <button type="submit" class="cart__update-button button button--secondary " form="cart">
                     {{ 'sections.cart.update' | t }}
                   </button>
                 </noscript>
 
-                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+                <button type="submit" id="checkout" class="cart__checkout-button checkout button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
                 </button>
               </div>

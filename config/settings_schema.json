@@ -24,6 +24,7 @@
         "default": "#176FC4",
         "label": "Accent"
       },
+
       {
         "type": "color",
         "id": "color_accent_variant",

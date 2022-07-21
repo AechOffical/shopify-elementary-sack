@@ -1,6 +1,7 @@
 {
   "current": {
-    "colors_solid_button_labels": "#ffffff",
+    "color_accent_1": "#176fc4",
+    "color_accent_variant": "#004E99",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -89,11 +90,7 @@
     "cart_type": "page",
     "show_cart_note": true,
     "cart_drawer_collection": "all-products",
-
-
-    "color_accent_1": "#176FC4",
-    "color_accent_variant": "#004E99",
-
+    "colors_solid_button_labels": "#ffffff",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",

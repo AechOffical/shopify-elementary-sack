@@ -293,6 +293,7 @@ body,
 .color-inverse,
 .color-accent-1,
 .color-accent-2 {
+  overflow-x: hidden;
   color: rgba(var(--text-dark), 0.75);
   background-color: rgb(var(--color-background));
 }

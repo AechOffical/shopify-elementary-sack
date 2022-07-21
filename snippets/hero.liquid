@@ -2,6 +2,12 @@
     .main {
         background: radial-gradient(69.66% 34.03% at 64.85% 79.5%,rgba(25,120,212,.8) 0%,rgba(255,255,255,0) 100%),linear-gradient(180deg,#1977d2 -9.55%,#1978d4 113.32%);
         overflow:hidden ;
+        color: rgba(var(--color-text-light));
+    }
+
+    img {
+        max-width: none !important;
+        max-height: none !important;
     }
 
     .hyphen {
@@ -48,11 +54,12 @@
         grid-row-start: 7;
         color: rgba(var(--color-text-light));
         z-index: 2;
+
+    }
     a {
         display: flex;
         color: rgba(var(--color-text-light));
         text-decoration: none;
-    }
     }
 
     .maskGroup {
@@ -64,7 +71,7 @@
     }
     #choc1 {
         position: absolute;
-        left: 50rem;
+        left: 80rem;
         bottom: 50%;
     }
     #choc2 {
@@ -74,7 +81,7 @@
     }
     #choc3 {
         position: absolute;
-        left: 47rem;
+        left: 46em;
         bottom: 120%;
     }
     #chocSplash {
@@ -89,7 +96,7 @@
         position: absolute;
         bottom: -1rem;
         right: 0;
-        left: 20rem;
+        left: 32rem;
     }
     .elevate {
         z-index: 5;
@@ -154,7 +161,7 @@
             height: 25%;
             z-index: 2;
 
-    }
+        }
         svg {
             position: absolute;
             width: 100%;

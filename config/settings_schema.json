@@ -58,7 +58,7 @@
         "type": "color",
         "id": "color_text_light",
         "default": "#FFFFFF",
-        "label": "Text Dark"
+        "label": "Text Light"
       },
       {
         "type": "color",

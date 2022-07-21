@@ -5,8 +5,7 @@
 
 <style>
     .productView {
-        display: grid;
-        grid-auto-rows: 16px;
+
         justify-content: center;
         height: 100%;
         padding-bottom: 100%;
@@ -37,74 +36,27 @@
         display: flex;
         gap: 20px;
     }
-    .cartAdd {
-        width: 100%;
-
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        border-radius: 50px;
-        padding: 13px 15px;
-        transition: background-color 0.5s;
-        cursor: pointer;
 
 
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0;
-
-
-
-        border: 2px solid var(--color-accent-1);
-
-        background-color: var(--color-accent-1);
-        color: #FFFFFF;
-
-    }
-
-    .cartAdd:hover {
-        border-color: #004E99FF;
-        background-color: #004E99FF;
-    }
 
     .tertiaries {
         display: flex;
         gap: 20px;
     }
 
-    .tertiary {
-        position: relative;
-        border-radius: 0;
-        background: none;
-        border: none;
-        color: var(--color-accent-1) !important;
-        padding: 0;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0;
-    }
-
-    .tertiary:after {
-        content: "";
-        position: absolute;
-        height: 2px;
-        left: 0;
-        bottom: 0;
-        width: 0%;
-        background-color: var(--color-accent-1);
-        transition: width 1s;
-    }
-
-    .tertiary:hover:after {
+    .carouselChoose {
+        display: flex;
         width: 100%;
+        justify-content: space-between;
+        gap: 11px;
+        overflow: clip;
+        margin-top: 11px;
     }
-
-    .tertiary:hover {
-        color: #004E99;
-        border-color: #004E99;
+    .my-slider  {
+        cursor: pointer;
+    }
+    .sliderPhoto {
+        cursor: pointer;
     }
 
 
@@ -118,6 +70,11 @@
         height: 0;
         position: relative;
 
+    }
+    .mainPhoto {
+        padding-bottom: 100%;
+        width: 100%;
+        height: 0;
     }
     .content {
         display: flex;
@@ -141,25 +98,25 @@
         .productImgWrap {
             grid-column-start: 1;
             grid-column-end: 7;
-            grid-row-start: 10;
+            grid-row-start: 6;
         }
         .content {
             grid-column-start: 8;
             grid-column-end: 13;
             color: black;
-            grid-row-start: 10;
+            grid-row-start: 6;
         }
     }
     @media screen and (max-width: 1199px) and (min-width: 768px) {
         .productImgWrap {
             grid-column-start: 1;
             grid-column-end: 4;
-            grid-row-start: 10;
+            grid-row-start: 6;
         }
         .content {
             grid-column-start: 4;
             grid-column-end: 7;
-            grid-row-start: 10;
+            grid-row-start: 6;
 
         }
     }
@@ -167,7 +124,7 @@
         .productImgWrap {
             grid-column-start: 1;
             grid-column-end: 3;
-            grid-row-start: 10;
+            grid-row-start: 6;
         }
         .content {
             grid-column-start: 1;
@@ -177,38 +134,21 @@
 
 
 
-    @media screen and (min-width: 1680px) {
-        .productView {
-            grid-template-columns: repeat(12, 80px);
-            column-gap: 30px;
-            height: 0;
-        }
-    }
-    @media screen and (min-width: 1200px) and (max-width: 1679px){
-        .productView {
-            grid-template-columns: repeat(12, 65px);
-            column-gap: 30px;
-        }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1199px){
-        .productView {
-            grid-template-columns: repeat(6, 90px);
-            column-gap: 30px;
-        }
-    }
-    @media screen and (max-width: 767px){
-        .productView {
-            display: grid;
-            grid-template-columns: 130px 130px;
-            grid-column-gap: 20px;
-        }
-    }
 </style>
 
 <div class="productViewWrap" style="background-color: {{  }}">
-    <section class="productView">
-        <div class="productImgWrap" style="background-color: {{ product.metafields.custom.backgroundcolor.value }} ">
-            <img id="mainPhoto" src="{{ product.featured_media | image_url: width: 1000}}" alt="Product image">
+    <section class="productView x-grid">
+        <div class="productImgWrap" >
+            <div class="mainPhoto" style="background-color: {{ product.metafields.custom.backgroundcolor.value }} ">
+                <img id="mainPhoto" src="{{ product.featured_media | image_url: width: 1000}}" alt="Product image">
+            </div>
+            <div class="carouselChoose">
+                {% for image in product.images %}
+                    <div class="my-slider">
+                        <img alt="product image" id="{{ image.id }}" class="sliderPhoto" src="{{ image.src | product_img_url: 'medium' }}">
+                    </div>
+                {% endfor %}
+            </div>
         </div>
         <div class="content">
             <span class="h2">{{ product.title }}</span>
@@ -242,7 +182,7 @@
                 <button
                         type="submit"
                         name="add"
-                        class="cartAdd"
+                        class="cartAdd button-primary"
                         {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                 >
                             <span>
@@ -293,4 +233,9 @@
 
 
     </section>
+    
 </div>
+
+<script lang="js">
+
+</script>

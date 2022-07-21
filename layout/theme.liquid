@@ -8,6 +8,13 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4"></script>
+
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -58,7 +65,7 @@
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
 
-        --color-accent-1: {{ settings.color_accent_1 }}
+        --color-accent-1: {{ settings.color_accent_1}};
         --color-accent-variant: {{ settings.color_accent_variant.red }}, {{ settings.color_accent_variant.green }}, {{ settings.color_accent_variant.blue }};
         --color-background-dark: {{ settings.color_background_dark.red }}, {{ settings.color_background_dark.green }}, {{ settings.color_background_dark.blue }};
         --color-background-light: {{ settings.color_background_light.red }}, {{ settings.color_background_light.green }}, {{ settings.color_background_light.blue }};
@@ -289,5 +296,8 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
   </body>
 </html>

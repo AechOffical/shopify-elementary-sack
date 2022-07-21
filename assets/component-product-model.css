@@ -1,12 +1,12 @@
 .product__xr-button {
-  background: rgba(var(--color-foreground), 0.08);
-  color: rgb(var(--color-foreground));
+  background: rgba(var(--neutral-88), 0.08);
+  color: rgb(var(--neutral-88));
   margin: 1rem auto;
   box-shadow: none;
   display: flex;
 }
 
-.button.product__xr-button:hover {
+.button-primary.product__xr-button:hover {
   box-shadow: none;
 }
 
@@ -29,7 +29,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  slider-component + .button.product__xr-button {
+  slider-component + .button-primary.product__xr-button {
     display: none;
   }
 

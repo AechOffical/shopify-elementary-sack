@@ -30,13 +30,11 @@ nav {
     height: 100%;
     width: 100%;
     position: absolute;
-    display: grid;
 
     z-index: 1;
     justify-content: center;
     align-items: center;
-    column-gap: 30px;
-    row-gap: 16px;
+
 }
 
 
@@ -88,10 +86,7 @@ a:link {
 
 
 @media screen and (min-width: 1680px) {
-    nav {
-        grid-template-columns: repeat(12, 80px);
-        grid-auto-rows: 16px;
-    }
+
 
     .secondary-links {
         grid-row-start: 2;
@@ -111,10 +106,7 @@ a:link {
 
 
 @media screen and (max-width: 1679px) and (min-width: 1200px) {
-    nav {
-        grid-template-columns: repeat(12, 65px);
-        grid-auto-rows: 16px;
-    }
+
 
     .secondary-links {
         grid-row-start: 2;
@@ -135,10 +127,7 @@ a:link {
 }
 
 @media screen and (max-width: 1199px) and (min-width: 768px) {
-    nav {
-        grid-template-columns: repeat(6, 90px);
-        grid-auto-rows: 16px;
-    }
+
 
     .secondary-links {
         grid-row-start: 2;
@@ -158,11 +147,7 @@ a:link {
 }
 
 @media screen and (max-width: 767px) {
-    nav {
-        grid-template-columns: repeat(2, 130px);
-        grid-column-gap: 20px;
-        grid-auto-rows: 16px;
-    }
+
 
     .secondary-links {
         grid-row-start: 2;
@@ -180,3 +165,4 @@ a:link {
     }
 
 }
+

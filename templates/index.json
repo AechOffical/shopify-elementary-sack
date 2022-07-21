@@ -1,12 +1,12 @@
 {
   "sections": {
     "image_banner": {
-      "type": "hero",
+      "type": "image-banner",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "image-banner",
+            "heading": "Image banner",
             "heading_size": "h0"
           }
         },

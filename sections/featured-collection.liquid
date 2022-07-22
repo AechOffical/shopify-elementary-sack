@@ -25,6 +25,13 @@
   }
 {%- endstyle -%}
 
+<style>
+  li {
+    max-width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
+    width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
+  }
+</style>
+
 {%- liquid
   assign products_to_display = section.settings.collection.all_products_count
 

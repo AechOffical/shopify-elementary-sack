@@ -169,7 +169,8 @@
         "1658745939bd4a6dc7-1": {
           "type": "collection-content",
           "settings": {
-            "collection": "rice-cakes"
+            "collection": "rice-cakes",
+            "link-text": "SHOP RICE CAKES"
           }
         }
       },

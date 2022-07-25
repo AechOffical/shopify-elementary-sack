@@ -1,0 +1,49 @@
+<style></style>
+
+
+<section class="collection-card">
+
+
+
+</section>
+
+{% schema %}
+{
+  "name": "collection-card",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "image-position",
+      "label": "Image Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+         "value": "right",
+          "label": "right"
+        }
+      ]
+    }
+  ],
+
+  "blocks": [
+    {
+      "name": "image",
+      "type": "image",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
+
+
+}
+
+{% endschema %}

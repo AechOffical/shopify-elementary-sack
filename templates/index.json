@@ -156,40 +156,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "1658750947dd409314": {
-      "type": "collection-card",
-      "blocks": {
-        "16587509475c47208e-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Image-1_1.png"
-          }
-        },
-        "ba4b21b0-d2cf-40a9-8823-121f7ceb0440": {
-          "type": "content",
-          "settings": {
-            "title": "Made from ingredients you can feel good about.",
-            "description": "Gourmet chocolate made from certified non-GMO South American cocoa beans. US-grown non-GMO rice and corn. Our dark chocolate is dairy-free and our vanilla flavor is all-natural. The best part? A serving has only 80 calories, 5 grams of sugar, and no cholesterol. We would call that pretty sweet for a snack that really satisfies.",
-            "url-title": "Learn more",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "16587509475c47208e-0",
-        "ba4b21b0-d2cf-40a9-8823-121f7ceb0440"
-      ],
-      "settings": {
-        "image-position": "right"
-      }
     }
   },
   "order": [
     "image_banner",
     "rich_text",
     "featured_collection",
-    "multicolumn",
-    "1658750947dd409314"
+    "multicolumn"
   ]
 }

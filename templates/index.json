@@ -53,14 +53,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<p>About Element Snacks<\/p>",
+            "heading": "<p>Talk about your brand<\/p>",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Life is too short to snack badly. That’s why our guilt-free rice cakes are made from organic rice and corn, \u2028enrobed in velvety chocolate.<\/p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         }
       },
@@ -87,6 +87,7 @@
         "description_style": "body",
         "collection": "all",
         "products_to_show": 3,
+        "columns_desktop": 3,
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
@@ -101,19 +102,6 @@
         "swipe_on_mobile": false,
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "multicolumn": {

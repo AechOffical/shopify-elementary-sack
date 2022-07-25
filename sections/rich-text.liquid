@@ -1,56 +1,86 @@
-<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'section-rich-text.css' | asset_url }}" media="print" onload="this.media='all'">
+<style>
+  .rich-text {
+    height: 70rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-bottom: 10%;
 
-<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
+  }
+  .rich-text:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2px;
+
+    background: url(https://cdn.shopify.com/s/files/1/0616/6151/1833/files/rich-text-BG.png?v=1658487634) no-repeat;
+    background-position-y: 100%;
+    background-size: cover;
+  }
+  .rich-text-content {
+    z-index: 2;
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  .rich-text-header {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: rgba(var(--color-text-dark));
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 3px;
   }
-{%- endstyle -%}
+  .rich-text-header:before, .rich-text-header:after {
+    content: "";
+    width: 10rem;
+    background-color: rgba(var(--color-text-dark));
+    height: 2px;
+    bottom: 2px;
+  }
 
-<div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
-    <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
-      <div class="rich-text__blocks {{ section.settings.content_alignment }}">
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'heading' -%}
-              <h2 class="rich-text__heading rte {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
-                {{ block.settings.heading | replace: 'p>', 'span>' }}
-              </h2>
-            {%- when 'caption' -%}
-              <p class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}" {{ block.shopify_attributes }}>
-                {{ block.settings.caption | escape }}
-              </p>
-            {%- when 'text' -%}
-              <div class="rich-text__text rte" {{ block.shopify_attributes }}>
-                {{ block.settings.text }}
-              </div>
-            {%- when 'button' -%}
-              <div class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
-                {%- if block.settings.button_label != blank -%}
-                  <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label | escape }}</a>
-                {%- endif -%}
-                {%- if block.settings.button_label_2 != blank -%}
-                  <a{% if block.settings.button_link_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_2 }}"{% endif %} class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label_2 | escape }}</a>
-                {%- endif -%}
-              </div>
-          {%- endcase -%}
-        {%- endfor -%}
-      </div>
-    </div>
+  .rich-text-body {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: rgba(var(--color-text-dark));
+
+  }
+
+  .rich-text-photo {
+    position: absolute;
+    right: -30rem;
+    top: -30rem;
+    transform: scale(0.5);
+    z-index: 1;
+
+
+  }
+
+</style>
+
+
+<section class="rich-text">
+  <div class="rich-text-header rich-text-content">about element snacks </div>
+  <div class="rich-text-body rich-text-content">
+    Life is too short to snack badly. That’s why our guilt-free rice cakes are made from organic rice and corn, enrobed in velvety chocolate.
   </div>
-</div>
+  <div class="tertiary"><a href="/about-us">see our story</a></div>
+  <div class="rich-text-photo rich-text-content"><img src="https://cdn.shopify.com/s/files/1/0616/6151/1833/files/about.webp?v=1658490758" alt="cool photo"></div>
+</section>
+
 
 {% schema %}
 {

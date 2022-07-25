@@ -38,10 +38,10 @@
     letter-spacing: 0;
   }
 
-  img {
+  .product-card-img {
     padding: 0;
-    max-width: 346px;
-    max-height: 450px;
+    max-width: 346px !important;
+    max-height: 450px !important;
   }
 
 
@@ -52,7 +52,7 @@
 <a href="{{ card_product.url }}" onmouseenter="mouseEnter('{{ card_product.id }}')" onmouseleave="onMouseleave('{{ card_product.id }}', '{{ card_product.metafields.custom.backgroundcolor.value }}')">
   <article class="article" >
     <div class="img img-{{ card_product.id }}" style="background-color: {{ card_product.metafields.custom.backgroundcolor.value }}">
-      <img src="{{ card_product.featured_media |   img_url: "master" }}" alt="product photo">
+      <img class="product-card-img" src="{{ card_product.featured_media |   img_url: "master" }}" alt="product photo">
     </div>
     <p class="h3">{{card_product.title}}</p>
     <p class="body1">

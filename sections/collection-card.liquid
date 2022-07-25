@@ -1,13 +1,24 @@
-<style></style>
+<style>
+    .collection-card {
+        display: flex;
+    }
+    .flex-left {
+        flex-direction: row;
+    }
+    .flex-right {
+        flex-direction: row-reverse;
+    }
+
+</style>
 
 
-<section class="collection-card">
+<section class="collection-card {%  if section.settings.image-position == "Right" %} flex-right {% else %} flex-left {% endif %} ">
 
     {% for block in section.blocks %}
         {% case block.type %}
             {% when 'image' %}
                 <div class="image">
-                    <img src="{{ block.settings.image.src | img_url: master }}" alt="Collection Image">
+                    <img src="{{ block.settings.image.src | img_url }}" alt="Collection Image">
                 </div>
             {% when 'collection-content' %}
                 <div class="content">

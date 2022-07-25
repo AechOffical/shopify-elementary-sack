@@ -43,7 +43,12 @@
                     {{ block.settings.collection.description }}
                     <span class="tertiary"><a href="{{ block.settings.collection.url }}">{{ block.settings.link-text }}</a></span>
                 </div>
-
+            {% when 'content' %}
+            <div class="content">
+                <h2 class="title">{{ block.settings.title }}</h2>
+                {{ block.settings.description }}
+                <span class="tertiary"><a href="{{ block.settings.url }}">{{ block.settings.url-title }}</a></span>
+            </div>
         {% endcase %}
     {% endfor %}
 
@@ -102,7 +107,33 @@
           "label": "Title of link to collection"
         }
       ]
-
+    },
+    {
+      "name": "Custom content",
+      "type": "content",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "description"
+        },
+        {
+          "type": "text",
+          "id": "url-title",
+          "label": "Title for link"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "link"
+        }
+        ]
     }
   ],
   "presets": [

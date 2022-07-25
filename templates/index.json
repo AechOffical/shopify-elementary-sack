@@ -156,12 +156,37 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "16587459390eed87d6": {
+      "type": "collection-card",
+      "blocks": {
+        "1658745939bd4a6dc7-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about.webp"
+          }
+        },
+        "1658745939bd4a6dc7-1": {
+          "type": "collection-content",
+          "settings": {
+            "collection": "rice-cakes"
+          }
+        }
+      },
+      "block_order": [
+        "1658745939bd4a6dc7-0",
+        "1658745939bd4a6dc7-1"
+      ],
+      "settings": {
+        "image-position": "left"
+      }
     }
   },
   "order": [
     "image_banner",
     "rich_text",
     "featured_collection",
-    "multicolumn"
+    "multicolumn",
+    "16587459390eed87d6"
   ]
 }

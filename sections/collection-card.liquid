@@ -1,6 +1,9 @@
 <style>
     .collection-card {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
     }
     .flex-left {
         flex-direction: row;
@@ -8,21 +11,32 @@
     .flex-right {
         flex-direction: row-reverse;
     }
+    .content {
+        width: 50%;
+    }
+    @media screen and (max-width: 720px) {
+        .collection-card {
+            flex-direction: column !important;
+        }
+
+    }
 
 </style>
 
 
-<section class="collection-card {%  if section.settings.image-position == "right" %} flex-right {% else %} flex-left {% endif %} ">
+<section class="collection-card page-width {%  if section.settings.image-position == "right" %} flex-right {% else %} flex-left {% endif %} ">
 
     {% for block in section.blocks %}
         {% case block.type %}
             {% when 'image' %}
                 <div class="image">
-                    <img src="{{ block.settings.image.src | img_url }}" alt="Collection Image">
+                    <img class="" src="{{ block.settings.image.src | img_url: '500x500' }}" alt="Collection Image">
                 </div>
             {% when 'collection-content' %}
                 <div class="content">
+                    <h2 class="title">{{ block.settings.collection.title }}</h2>
                     {{ block.settings.collection.description }}
+                    <div class="tertiary"><a href="{{ block.settings.collection.url }}">{{ block.settings.link-text }}</a></div>
                 </div>
 
         {% endcase %}
@@ -76,7 +90,12 @@
             "type": "collection",
             "id": "collection",
             "label": "Collection"
-          }
+          },
+        {
+          "type": "text",
+          "id": "link-text",
+          "label": "Title of link to collection"
+        }
       ]
 
     }
@@ -85,7 +104,7 @@
     {
       "name": "collection-card",
       "settings": {
-        "image-position": "Left"
+        "image-position": "right"
       },
       "blocks": [
         {

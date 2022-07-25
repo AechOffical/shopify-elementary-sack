@@ -2,14 +2,43 @@
   "sections": {
     "main": {
       "type": "main-list-collections",
+      "disabled": true,
       "settings": {
         "title": "Collections",
         "sort": "alphabetical",
-        "image_ratio": "square"
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    },
+    "1658748346d009d096": {
+      "type": "collection-card",
+      "blocks": {
+        "165874834637f7a449-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image-1_1.png"
+          }
+        },
+        "165874834637f7a449-1": {
+          "type": "collection-content",
+          "settings": {
+            "collection": "rice-cakes",
+            "link-text": "SHOP RICE CAKES"
+          }
+        }
+      },
+      "block_order": [
+        "165874834637f7a449-0",
+        "165874834637f7a449-1"
+      ],
+      "settings": {
+        "image-position": "right"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1658748346d009d096"
   ]
 }

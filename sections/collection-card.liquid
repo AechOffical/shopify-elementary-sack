@@ -23,7 +23,7 @@
         },
         {
          "value": "right",
-          "label": "right"
+          "label": "Right"
         }
       ]
     }
@@ -33,6 +33,7 @@
     {
       "name": "image",
       "type": "image",
+      "limit":  1,
       "settings": [
         {
           "id": "image",
@@ -40,13 +41,26 @@
           "label": "Image"
         }
       ]
+    },
+    {
+      "name": "Collection content",
+      "type": "collection-content",
+      "limit":  1,
+      "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+      ]
+
     }
   ],
   "presets": [
     {
       "name": "collection-card",
       "settings": {
-        "image-position": "left"
+        "image-position": "Left"
       },
       "blocks": [
         {

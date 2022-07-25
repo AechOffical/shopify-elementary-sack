@@ -3,13 +3,27 @@
 
 <section class="collection-card">
 
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when 'image' %}
+                <div class="image">
+                    <img src="{{ block.settings.image.src }}" alt="Collection Image">
+                </div>
+            {% when 'collection-content' %}
+                <div class="content">
+                    {{ block.settings.collection.description }}
+                </div>
+
+        {% endcase %}
+    {% endfor %}
+
 
 
 </section>
 
 {% schema %}
 {
-  "name": "collection-card",
+  "name": "Collection card",
   "tag": "section",
   "settings": [
     {
@@ -65,6 +79,9 @@
       "blocks": [
         {
           "type": "image"
+        },
+        {
+          "type": "collection-content"
         }
       ]
     }

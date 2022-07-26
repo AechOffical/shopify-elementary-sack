@@ -1,23 +1,67 @@
 <style>
 
-.ide-column {
-    text-align: center;
-}
+    .ident-content {
+        display: flex;
+
+    }
+
+    .identifires {
+        position: relative;
+
+        height: 1000px;
+        color: rgba(var(--color-text-light));
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ident-content:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+        height: 95%;
+        background: url("https://cdn.shopify.com/s/files/1/0617/8072/1830/files/BG.png?v=1658829002") no-repeat center;
+        background-size: cover;
+        background-position-y: 100%;
+        z-index: 0;
+    }
+
+    .ide-column {
+        z-index: 2;
+
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    .column-text {
+        width: 80%;
+    }
 </style>
 
 
-<section class="identifires page-width">
+<section class="identifires ">
     <div class="signatureImg">
         <img src="" alt="">
     </div>
-    <div class="ident-content">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="ident-content page-width">
         {% for block in section.blocks %}
             {% case block.type %}
                 {% when 'column' %}
                     <div class="ide-column">
                         <span class="overline">{{ block.settings.subtitle }}</span>
-                        <h3>{{ block.settings.title }}</h3>
-                        <div>{{ block.settings.text }}</div>
+                        <h3 class="header3">{{ block.settings.title }}</h3>
+                        <div class="column-text">{{ block.settings.text }}</div>
                     </div>
             {% endcase %}
         {% endfor %}
@@ -31,6 +75,11 @@
       "name": "Collection card",
       "tag": "section",
       "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section heading or title"
+        },
         {
           "type": "image_picker",
           "id": "signature_img",

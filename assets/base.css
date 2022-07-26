@@ -9,6 +9,7 @@
 
 body {
   background-color: rgba(var(--color-background-light:));
+  width: 100vw;
 }
 
 .color-background-2 {
@@ -538,6 +539,14 @@ blockquote {
 }
 
 
+.header3 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+
+}
 
 
 .caption-large,

@@ -1,15 +1,26 @@
 <style>
 
-
+.ide-column {
+    text-align: center;
+}
 </style>
 
 
-<section class="identifires">
+<section class="identifires page-width">
     <div class="signatureImg">
         <img src="" alt="">
     </div>
     <div class="ident-content">
-            yoyoyo
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'column' %}
+                    <div class="ide-column">
+                        <span class="overline">{{ block.settings.subtitle }}</span>
+                        <h3>{{ block.settings.title }}</h3>
+                        <div>{{ block.settings.text }}</div>
+                    </div>
+            {% endcase %}
+        {% endfor %}
 
     </div>
 

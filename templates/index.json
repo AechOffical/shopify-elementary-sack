@@ -102,6 +102,44 @@
         "padding_bottom": 0
       }
     },
+    "16588283941edee4f0": {
+      "type": "identifiers",
+      "blocks": {
+        "1658828394833623ab-0": {
+          "type": "column",
+          "settings": {
+            "subtitle": "MADE WITH",
+            "title": "Clean Ingredients",
+            "text": "No preservatives, artifical flavors, corn syrup, trans fat, or cholesterol."
+          }
+        },
+        "1658828394833623ab-1": {
+          "type": "column",
+          "settings": {
+            "subtitle": "COATED IN",
+            "title": "Indulgent Chocolate",
+            "text": "Our products are topped with indulgent white, dark and milk chocolate."
+          }
+        },
+        "1658828394833623ab-2": {
+          "type": "column",
+          "settings": {
+            "subtitle": "...AND ALWAYS",
+            "title": "Deliciously Crispy",
+            "text": "Fans can't get enough of the thin and crispy texture of our rice cakes."
+          }
+        }
+      },
+      "block_order": [
+        "1658828394833623ab-0",
+        "1658828394833623ab-1",
+        "1658828394833623ab-2"
+      ],
+      "settings": {
+        "title": "Hello this is heading",
+        "signature_img": "shopify:\/\/shop_images\/dave_peters_-_MINI_DC_RICE_W_BITE_3_1.png"
+      }
+    },
     "165882583476c9d3db": {
       "type": "multicolumn",
       "blocks": {
@@ -181,52 +219,14 @@
       "settings": {
         "image-position": "right"
       }
-    },
-    "16588283941edee4f0": {
-      "type": "identifiers",
-      "blocks": {
-        "1658828394833623ab-0": {
-          "type": "column",
-          "settings": {
-            "subtitle": "MADE WITH",
-            "title": "Clean Ingredients",
-            "text": "No preservatives, artifical flavors, corn syrup, trans fat, or cholesterol."
-          }
-        },
-        "1658828394833623ab-1": {
-          "type": "column",
-          "settings": {
-            "subtitle": "COATED IN",
-            "title": "Indulgent Chocolate",
-            "text": "Our products are topped with indulgent white, dark and milk chocolate."
-          }
-        },
-        "1658828394833623ab-2": {
-          "type": "column",
-          "settings": {
-            "subtitle": "...AND ALWAYS",
-            "title": "Deliciously Crispy",
-            "text": "Fans can't get enough of the thin and crispy texture of our rice cakes."
-          }
-        }
-      },
-      "block_order": [
-        "1658828394833623ab-0",
-        "1658828394833623ab-1",
-        "1658828394833623ab-2"
-      ],
-      "settings": {
-        "title": "Hello this is heading",
-        "signature_img": "shopify:\/\/shop_images\/dave_peters_-_MINI_DC_RICE_W_BITE_3_1.png"
-      }
     }
   },
   "order": [
     "image_banner",
     "rich_text",
     "featured_collection",
+    "16588283941edee4f0",
     "165882583476c9d3db",
-    "16588255754fde59f6",
-    "16588283941edee4f0"
+    "16588255754fde59f6"
   ]
 }

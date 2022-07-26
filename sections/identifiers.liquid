@@ -7,6 +7,7 @@
 
     .identifires {
         position: relative;
+        margin-top: 20rem;
 
         height: 1000px;
         color: rgba(var(--color-text-light));
@@ -44,6 +45,13 @@
         align-items: center;
     }
 
+    .signatureImg {
+        position: absolute;
+        top: -30rem;
+
+        margin: auto;
+    }
+
     .column-text {
         width: 80%;
     }
@@ -58,8 +66,8 @@
 
 
 <section class="identifires ">
-    <div class="signatureImg">
-        <img src="{{ section.settings.signature_img.src | img_url }}" class="elevate" alt="img">
+    <div class="signatureImg elevate">
+        <img src="{{ section.settings.signature_img.src | img_url: '500x500' }}"  alt="img">
     </div>
     <h2 class="elevate header2">{{ section.settings.title }}</h2>
     <div class="ident-content page-width">
@@ -74,6 +82,10 @@
             {% endcase %}
         {% endfor %}
 
+    </div>
+    <button class="button-secondary-dark elevate">SHOP NOW</button>
+    <div class="elevate">
+        <img src="https://cdn.shopify.com/s/files/1/0617/8072/1830/files/es-swoosh.png?v=1658832107" alt="swoosh">
     </div>
 
 </section>

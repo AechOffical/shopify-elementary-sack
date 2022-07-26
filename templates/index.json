@@ -82,8 +82,6 @@
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
-        "description": "",
-        "show_description": false,
         "description_style": "body",
         "collection": "all",
         "products_to_show": 3,
@@ -104,57 +102,31 @@
         "padding_bottom": 0
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "16588255754fde59f6": {
+      "type": "collection-card",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "1658825575e13fd907-0": {
+          "type": "image",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/Image-1_1.png"
           }
         },
-        "column2": {
-          "type": "column",
+        "2d61f379-d25b-45ac-b51b-6c4f9f442466": {
+          "type": "content",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "title": "Made from ingredients you can feel good about.",
+            "description": "Gourmet chocolate made from certified non-GMO South American cocoa beans. US-grown non-GMO rice and corn. Our dark chocolate is dairy-free and our vanilla flavor is all-natural. The best part? A serving has only 80 calories, 5 grams of sugar, and no cholesterol. We would call that pretty sweet for a snack that really satisfies.",
+            "url-title": "Learn more",
+            "url": "shopify:\/\/pages\/contact"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "1658825575e13fd907-0",
+        "2d61f379-d25b-45ac-b51b-6c4f9f442466"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image-position": "right"
       }
     }
   },
@@ -162,6 +134,6 @@
     "image_banner",
     "rich_text",
     "featured_collection",
-    "multicolumn"
+    "16588255754fde59f6"
   ]
 }

@@ -62,8 +62,11 @@
               card_product: product
             %}
           </div>
+          {% endfor %}
       </div>
   </div>
+
+        {% endpaginate %}
 
 
 
@@ -75,9 +78,9 @@
     {
       "type": "range",
       "id": "products_per_page",
-      "min": 1,
+      "min": 0,
       "max": 4,
-      "step": 2,
+      "step": 1,
       "default": 3,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
     },

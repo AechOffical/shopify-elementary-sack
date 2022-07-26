@@ -15,6 +15,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        gap: 60px;
     }
 
     .ident-content:after {
@@ -46,14 +47,21 @@
     .column-text {
         width: 80%;
     }
+    @media screen and (max-width: 720px) {
+        .ident-content {
+            flex-direction: column;
+        }
+    }
+
+
 </style>
 
 
 <section class="identifires ">
     <div class="signatureImg">
-        <img src="" alt="">
+        <img src="{{ section.settings.signature_img.src | img_url }}" class="elevate" alt="img">
     </div>
-    <h2>{{ section.settings.title }}</h2>
+    <h2 class="elevate header2">{{ section.settings.title }}</h2>
     <div class="ident-content page-width">
         {% for block in section.blocks %}
             {% case block.type %}

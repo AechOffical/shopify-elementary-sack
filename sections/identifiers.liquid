@@ -1,0 +1,71 @@
+<style>
+
+
+</style>
+
+
+<section class="identifires">
+    <div class="signatureImg">
+        <img src="" alt="">
+    </div>
+    <div class="ident-content">
+            yoyoyo
+
+    </div>
+
+</section>
+
+{% schema %}
+    {
+      "name": "Collection card",
+      "tag": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "signature_img",
+          "label": "Top signature image"
+        }
+        ],
+      "blocks": [
+        {
+          "name": "column",
+          "type": "column",
+          "limit": 3,
+          "settings": [
+            {
+              "type": "text",
+              "id": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title of the column"
+            },
+            {
+              "type": "textarea",
+              "id": "text",
+              "label": "Content of the column"
+            }
+            ]
+          }
+        ],
+      "presets": [
+        {
+          "name": "Multicolumn brand identifiers",
+          "blocks": [
+            {
+              "type": "column"
+            },
+            {
+              "type": "column"
+            },
+            {
+              "type": "column"
+            }
+          ]
+        }
+      ]
+    }
+
+{% endschema %}

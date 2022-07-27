@@ -147,14 +147,7 @@
         }
 
         .bottom {
-            box-sizing: content-box;
-            display: grid;
-            grid-template-columns: repeat(12, 80px);
-            grid-auto-rows: 16px;
-            justify-content: center;
-            align-items: center;
-            column-gap: 30px;
-            row-gap: 16px;
+
             width: 100%;
             position: absolute;
             bottom: 0;
@@ -163,6 +156,16 @@
 
         }
 
+        .botSVG {
+            box-sizing: content-box;
+            display: grid;
+            grid-template-columns: repeat(12, 80px);
+            grid-auto-rows: 16px;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+            row-gap: 16px;
+        }
     }
     @media screen and (max-width: 1679px) and (min-width: 1200px) {
         .main {
@@ -187,14 +190,7 @@
             text-align: left;
         }
         .bottom {
-            box-sizing: content-box;
-            display: grid;
-            grid-template-columns: repeat(12, 65px);
-            grid-auto-rows: 16px;
-            justify-content: center;
-            align-items: center;
-            column-gap: 30px;
-            row-gap: 16px;
+
             width: 100%;
             position: absolute;
             bottom: 0;
@@ -203,6 +199,16 @@
 
     }
 
+        .botSVG {
+            box-sizing: content-box;
+            display: grid;
+            grid-template-columns: repeat(12, 65px);
+            grid-auto-rows: 16px;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+            row-gap: 16px;
+        }
 
     .bottom:after {
         content: "";
@@ -226,7 +232,7 @@
     }
 
 
-    @media screen and (max-width: 1199px) and (min-width: 321px) {
+    @media screen and (max-width: 1199px) and (min-width: 720px) {
 
         .main {
             overflow-x: hidden;
@@ -280,6 +286,16 @@
         }
 
         .bottom {
+
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 19%;
+            z-index: 2;
+
+        }
+
+        .botSVG {
             box-sizing: content-box;
             display: grid;
             grid-template-columns: repeat(6, 90px);
@@ -288,12 +304,6 @@
             align-items: center;
             column-gap: 30px;
             row-gap: 16px;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            height: 19%;
-            z-index: 2;
-
         }
 
         .announcement {
@@ -306,17 +316,8 @@
 
 
 
-    }
-    @media screen and (min-width: 321px) and (max-width: 800px) {
-        .maskGroup {
-            transform: scale(0.68);
-            margin: auto;
 
 
-            left: 3rem !important;
-            bottom: -6%;
-        }
-    }
 
     @media screen and (max-width: 767px) {
         .main {
@@ -326,35 +327,88 @@
             grid-auto-rows: 16px;
         }
 
-        .bottom:after {
+        .tagline {
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+
+            grid-row-start: 7;
+            grid-row-end: 12;
+            align-self: center;
+
+            font-size: 110px;
+            font-weight: 700;
+            line-height: 112px;
+            letter-spacing: -3px;
+            text-align: left;
+        }
+        .over {
+            grid-row-start: 7;
+        }
+        .maskGroup {
+            transform: scale(0.5);
+
+            left: -10rem;
+            bottom: -5rem;
+        }
+
+        .primary-hero-button {
+            grid-row-start: 13;
+            grid-column-start: 1;
+        }
+
+        .botSVG:after {
             content: "";
             position: absolute;
 
-            background-position-x: -15% ;
-            background: url("https://cdn.shopify.com/s/files/1/0617/8072/1830/files/Vector.png?v=1658824694");
-            background-size: contain;
+            background-position-x: -100% ;
+            background: url("https://cdn.shopify.com/s/files/1/0617/8072/1830/files/Vector_53453c1e-3b48-4c30-b267-a1945ce3fbc6.png?v=1658918042") no-repeat;
+            background-size: cover;
 
             bottom: 0;
             left: 0;
-            height: 70%;
+            height: 100%;
             width: 100%;
         }
 
         .bottom {
-            box-sizing: content-box;
-            display: grid;
-            grid-template-columns: repeat(6, 90px);
-            grid-auto-rows: 16px;
-            justify-content: center;
-            align-items: center;
-            column-gap: 30px;
-            row-gap: 16px;
+
             width: 100%;
             position: absolute;
             bottom: 0;
             height: 19%;
             z-index: 2;
+            /*background-color: #401e0e;*/
 
+        }
+        .botSVG {
+            box-sizing: content-box;
+            display: grid;
+            grid-template-columns: repeat(2, 130px);
+            grid-auto-rows: 16px;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+            row-gap: 16px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .h1-large {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 48px;
+            letter-spacing: 0px;
+            text-align: left;
+
+        }
+
+        .announcement {
+            grid-row-start: 5;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: left !important;
         }
         }
 </style>
@@ -381,10 +435,12 @@
 
         </div>
 
-        <div class="bottom" >
-            <div class="announcement body1"><a class="a" href="#">
-                    <div>An important announcement goes right here in this bar. Lorem ipsum dolor sit amet – Learn More</div>
-                </a> </div>
+        <div class="bottom">
+            <div class="botSVG">
+                <div class="announcement body1"><a class="a" href="#">
+                        <div>An important announcement goes right here in this bar. Lorem ipsum dolor sit amet – Learn More</div>
+                    </a> </div>
+            </div>
         </div>
     </section>
 

@@ -538,6 +538,15 @@ blockquote {
   text-align: left;
 }
 
+.header5 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: left;
+
+}
+
 
 .header3 {
   font-size: 26px;
@@ -555,6 +564,15 @@ blockquote {
   line-height: 48px;
   letter-spacing: 0px;
   text-align: center;
+
+}
+
+.body2 {
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
 
 }
 

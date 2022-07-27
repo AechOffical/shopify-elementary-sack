@@ -2,22 +2,121 @@
 <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <style>
-.expand {
-    display: none;
-}
+
 .nav-element {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
+
+.nav-element:hover {
+    color: var(--color-accent-1);
+    fill: var(--color-accent-1);
+}
+
+.element {
+    position: relative;
+}
+
+.expanded {
+    position: absolute;
+    left: 0;
+    width: 250px;
+    list-style: none;
+    padding: 2rem;
+    background-color: rgba(var(--color-text-light));
+    box-shadow: 0px 4px 10px 0px #0000001A;
+
+}
+
+.child_link {
+    max-width: 250px;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.child_link:hover {
+    background-color:  #1F9BDE0D;
+
+    color: rgba(var(--color-accent-variant));
+}
+
 a {
     color: inherit;
+}
+
+#menuTrigger {
+    cursor: pointer;
+    z-index: 2;
+}
+
+#navDrawer {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(var(--color-background-light));
+    position: absolute;
+    bottom: 0;
+    top: 0;
+}
+
+.rotate {
+    transform: rotateX(180deg);
+}
+
+.item-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(var(--neutral-88));
+}
+
+.navDrawerItems {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+.navDrawerItem {
+    width: 100%;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.childDrawer {
+    position: absolute;
+    width: 100%;
+}
+
+.backButton {
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+    width: fit-content;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1200px){
+    #menuTrigger {
+        display: none;
+    }
+    #navDrawer {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1199px) {
     .primary-links {
         display: none;
     }
+    #menuTrigger {
+        display: flex;
+    }
+
+}
+
+.chev {
+    display: flex;
+    align-items: center;
 }
 
 </style>
@@ -25,9 +124,9 @@ a {
 <div class="headerWrapper shopify-section-header-sticky">
     <header>
         <nav class="x-grid">
-            {% comment %}<div v-show="mobile" id="menuTrigger">{% endcomment %}
-                {% comment %}<img ref="menuTrigger" @click="menu" src="@/assets/menu.svg" alt="menu trigger">{% endcomment %}
-            {% comment %}</div>{% endcomment %}
+            <div id="menuTrigger" onclick="mobileNavDrawer()">
+                {% render 'menu-trigger' %}
+            </div>
             <div class="primary-links" >
 
                         {% for link in linklists.main-menu.links %}
@@ -35,15 +134,15 @@ a {
                                 <span class="element">
 
                                     {% if link.levels != 0 %}
-                                        <span class="nav-element">
+                                        <span class="nav-element" onclick="menuItemOnClick('link{{ link.title }}', 'chev{{ link.title }}')">
                                             {{ link.title | escape }}
-                                            {% render 'icon-chev-expand' %}
+                                            <span id="chev{{ link.title }}" class="chev">{% render 'icon-chev-expand' %}</span>
                                         </span>
 
                                             <div class="expand">
-                                             <ul class="expanded">
+                                             <ul class="expanded body2 hidden" id="link{{ link.title }}">
                                                  {% for child_link in link.links %}
-                                                    <li>
+                                                    <li class="child_link">
                                                         <a href="{{ child_link.url }}">{{ child_link.title | escape }}</a>
                                                     </li>
                                                  {% endfor %}
@@ -79,10 +178,151 @@ a {
             </div>
         </nav>
     </header>
+
+    <div id="navDrawer" class="hidden">
+        <div id="navDrawerItems" class="navDrawerItems  header5">
+            {% for link in linklists.main-menu.links %}
+                {% if link.levels == 0 %}
+                    <div class="navDrawerItem">
+                        <a  href="{{ link.url }}">
+                            {{ link.title }}
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="navDrawerItem" onclick="mobileNavChildDrawerOpen('child{{ link.title }}')">
+                        {{ link.title }}
+                        <span class="chev">{% render 'chev-right' %}</span>
+                    </div>
+                    <div class="item-divider"> </div>
+
+
+        {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% for link in linklists.main-menu.links %}
+
+        <div id="child{{ link.title }}" class="navDrawerItems childDrawer hidden header5">
+            <div class="backButton" onclick="mobileNavChildDrawerClose(`child{{ link.title }}`)">
+                <div class="tertiary">
+                    {% render 'chev-back' %}
+                    BACK
+                </div>
+            </div>
+
+            {% for child_link in link.links %}
+                <div class="navDrawerItem">
+                    <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                </div>
+                <div class="item-divider"> </div>
+
+            {% endfor %}
+
+        </div>
+    {% endfor %}
+
+
 </div>
 
 <script lang="js">
 
+    function menuItemOnClick(menuListID, chevID) {
+        const element = document.getElementById(menuListID)
+        const chev = document.getElementById(chevID)
+        if(element.classList.contains("hidden")) {
+            element.classList.remove("hidden")
+            chev.classList.add("rotate")
+            gsap.from(`#${menuListID}`, {
+                opacity: 0,
+                top: -2,
+                duration: 0.15
+            })
+
+            const click = (event) => {
+                const isClickInside = element.contains(event.target);
+                if (!isClickInside) {
+                    element.classList.add("hidden")
+                    chev.classList.remove("rotate")
+
+                    document.removeEventListener("click", click)
+                }
+            }
+
+            setTimeout(() => {
+                document.addEventListener("click", click)}, 50)
+        }
+        else {
+            document.getElementById(menuListID).classList.add("hidden")
+            chev.classList.remove("rotate")
+
+        }
+    }
+
+    function mobileNavDrawer() {
+        const drawer = document.getElementById("navDrawer")
+
+
+        if(drawer.classList.contains("hidden")){
+            drawer.classList.remove("hidden")
+            gsap.set("#navDrawer", {
+                left: 0
+            })
+            gsap.from('#navDrawer', {
+                left: "-100%",
+                duration: 0.3
+            })
+        }
+        else {
+            gsap.to("#navDrawer", {
+                left:"-100%",
+                duration: 0.3
+            })
+
+            setTimeout(() => {drawer.classList.add("hidden")}, 300)
+
+
+
+        }
+    }
+
+    function mobileNavChildDrawerOpen(childId) {
+        const child = document.getElementById(childId)
+        gsap.set(`#${childId}`, {
+            left: "0"
+        })
+
+        child.classList.remove("hidden")
+
+        gsap.set("#navDrawerItems", {position: "absolute"})
+        gsap.to("#navDrawerItems", {
+            left: "-100%",
+            duration: 0.3
+        })
+        gsap.from(`#${childId}`, {
+            right: "-100%",
+            duration: 0.3
+        })
+    }
+    function mobileNavChildDrawerClose(childId) {
+        const child = document.getElementById(childId)
+
+        const timeline = gsap.timeline()
+
+        timeline.to("#navDrawerItems", {
+            left: "0",
+            duration: 0.3
+        })
+        timeline.to(`#${childId}`, {
+            right: "-100%",
+            duration: 0.3
+        }, "<")
+            child.classList.add("hidden")
+
+
+        timeline.set("#navDrawerItems", {position: "initial"})
+
+
+    }
 
 </script>
 

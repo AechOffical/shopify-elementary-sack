@@ -135,7 +135,7 @@ a {
 
                                     {% if link.levels != 0 %}
                                         <span class="nav-element" onclick="menuItemOnClick('link{{ link.title }}', 'chev{{ link.title }}')">
-                                            {{ link.title | escape }}
+                                            <a href="javascript:void(0)">{{ link.title | escape }}</a>
                                             <span id="chev{{ link.title }}" class="chev">{% render 'icon-chev-expand' %}</span>
                                         </span>
 
